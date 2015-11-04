@@ -11,10 +11,8 @@ class Application extends Controller {
     val client = new RedisClient("localhost", 6379) // Todo : Throws exception, handle.
     val specList = client.hgetall("List").get // Todo : getOrElse
     val res = specList.map{ tuple =>
-      val tmp = tuple._2.toList
-      SpecElement(tuple._1, tuple._2.toBoolean, tuple._3.toInt)
+      SpecElement(tuple._1, tuple._2.toBoolean)
     }
-
     Ok(Json.toJson(res.toList)) // Todo: exception handling
   }
 }

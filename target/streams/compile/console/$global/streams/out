@@ -1,0 +1,46 @@
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.6[0m
+[0m[[0mdebug[0m] [0mWaiting for threads to exit or System.exit to be called.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread run-main-0 to terminate.[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.6[0m
+[0m[[0minfo[0m] [0mStarting scala interpreter...[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[31merror[0m] [0m(run-main-0) java.io.IOException: Input/output error[0m
+java.io.IOException: Input/output error
+	at java.io.FileInputStream.read0(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:207)
+	at jline.internal.NonBlockingInputStream.read(NonBlockingInputStream.java:248)
+	at jline.internal.InputStreamReader.read(InputStreamReader.java:261)
+	at jline.internal.InputStreamReader.read(InputStreamReader.java:198)
+	at jline.console.ConsoleReader.readCharacter(ConsoleReader.java:2145)
+	at jline.console.ConsoleReader.readLine(ConsoleReader.java:2349)
+	at jline.console.ConsoleReader.readLine(ConsoleReader.java:2269)
+	at scala.tools.nsc.interpreter.JLineReader.readOneLine(JLineReader.scala:73)
+	at scala.tools.nsc.interpreter.InteractiveReader$class.readLine(InteractiveReader.scala:36)
+	at scala.tools.nsc.interpreter.JLineReader.readLine(JLineReader.scala:17)
+	at scala.tools.nsc.interpreter.ILoop.readOneLine(ILoop.scala:415)
+	at scala.tools.nsc.interpreter.ILoop.loop(ILoop.scala:429)
+	at scala.tools.nsc.interpreter.ILoop$$anonfun$process$1.apply$mcZ$sp(ILoop.scala:920)
+	at scala.tools.nsc.interpreter.ILoop$$anonfun$process$1.apply(ILoop.scala:906)
+	at scala.tools.nsc.interpreter.ILoop$$anonfun$process$1.apply(ILoop.scala:906)
+	at scala.reflect.internal.util.ScalaClassLoader$.savingContextLoader(ScalaClassLoader.scala:97)
+	at scala.tools.nsc.interpreter.ILoop.process(ILoop.scala:906)
+	at scala.tools.nsc.interpreter.ILoop.main(ILoop.scala:931)
+	at xsbt.ConsoleInterface.run(ConsoleInterface.scala:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at sbt.compiler.AnalyzingCompiler.call(AnalyzingCompiler.scala:101)
+	at sbt.compiler.AnalyzingCompiler.console(AnalyzingCompiler.scala:76)
+	at sbt.Console.sbt$Console$$console0$1(Console.scala:22)
+	at sbt.Console$$anonfun$apply$2$$anonfun$apply$1.apply$mcV$sp(Console.scala:23)
+	at sbt.Console$$anonfun$apply$2$$anonfun$apply$1.apply(Console.scala:23)
+	at sbt.Console$$anonfun$apply$2$$anonfun$apply$1.apply(Console.scala:23)
+	at sbt.Logger$$anon$4.apply(Logger.scala:85)
+	at sbt.TrapExit$App.run(TrapExit.scala:248)
+	at java.lang.Thread.run(Thread.java:745)
+[0m[[0mdebug[0m] [0m	Thread run-main-0 exited.[0m
+[0m[[0mdebug[0m] [0mInterrupting remaining threads (should be all daemons).[0m
+[0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-5[0m
+[0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-5[0m
+[0m[[0mdebug[0m] [0mSandboxed run complete..[0m

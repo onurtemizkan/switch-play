@@ -1,0 +1,14 @@
+package controllers
+
+import com.types
+import play.api.mvc._
+
+class Application extends Controller {
+
+  val client = new RedisClient("localhost", 6379)
+  r.set()
+
+  def index = Action {
+    Ok(views.html.index("Your new application is ready."))
+  }
+}

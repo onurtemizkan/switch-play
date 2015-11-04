@@ -1,0 +1,14 @@
+package controllers
+
+import com.redis._
+import play.api.mvc._
+
+class Application extends Controller {
+
+  val client = new RedisClient("localhost", 6379)
+  val surname = client.get("onur")
+
+  def index = Action {
+    Ok(views.html.index(surname.getOrElse("Err")))
+  }
+}

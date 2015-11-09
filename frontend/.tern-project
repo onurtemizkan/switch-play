@@ -1,0 +1,14 @@
+{
+  "libs": [
+    "browser",
+    "underscore"
+  ],
+  "loadEagerly": [
+  ],
+  "plugins": {
+    "requirejs": {
+      "baseURL": "./",
+      "paths": {}
+    }
+  }
+}

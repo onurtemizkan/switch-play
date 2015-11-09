@@ -1,0 +1,17 @@
+{
+  "name": "switch-fe",
+  "version": "1.0.0",
+  "description": "frontend for project switch",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Onur Temizkan",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^1.6.0",
+    "gulp": "^3.9.0",
+    "underscore": "^1.8.3"
+  },
+  "dependencies": {}
+}

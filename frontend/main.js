@@ -3,9 +3,15 @@
  * @author Onur Temizkan
  * @version 1.0.0
  */
+
 (function() {
   "use strict";
 
+  /**
+   * Global Toggle-Node List
+   */
+  var nodeList = [];
+  
   /**
    * Configuration
    */
@@ -50,17 +56,18 @@
   };
 
   /**
-   * Finds element from its project name
+   * Finds the given element and returns f it is active
    * @param {string} projectName - Name of the project to be found
    * @param {array} projectList - Array of projects to be searched
    */
-  var findElement = function(projectName, projectList) {
-    var ret = retList.find(function(element, index, array) {
-      if (element.name == projectName) {
+  var checkActive = function(projectName) {
+    var ret = nodeList.find(function(element, index, array) {
+      if (element.name === projectName) {
         return true;
       }
       return false;      
-    });  
+    });
+    
     if (ret != undefined) {
       return ret.isActive;
     }
@@ -69,17 +76,24 @@
     
   
   /**
-   * Calls an XHR request and checks if the given project is active 
+   * Calls an XHR request to fill-up the project list
    * @param {string} projectName - Name of the project to be found
    */
-  var checkIfActive = function(projectName) {
+  var init = function() {
     makeRequest(conf().request.method, conf().request.url)
       .then(function(data) {
-        var retList = [];
-        JSON.parse(data).forEach(function(node) {
-          retList.push(node);
+        var obj = JSON.parse(data);
+        Object.keys(obj).forEach(function(key) {
+          nodeList.push({name: key, isActive: obj[key]});
         });
-        return findElement(projectName, retList);
+        console.log(nodeList);
       });
   };
+  init();
+
+  window.setTimeout(function() {
+    console.log(checkActive("david"));
+    console.log(checkActive("gilmour"));
+    console.log(checkActive("hola"));
+  }, 3000); 
 })();

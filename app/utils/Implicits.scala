@@ -15,7 +15,6 @@ object Implicits {
       var jsObject = Json.obj()
       list map { elm =>
         jsObject = jsObject + Tuple2(elm.name, Json.toJson(elm))
- 
       }
       jsObject
     }

@@ -89,8 +89,12 @@
         console.log(nodeList);
       });
   };
+
   init();
 
+  /**
+   * Assertions
+   */
   window.setTimeout(function() {
     console.log(checkActive("david"));
     console.log(checkActive("gilmour"));

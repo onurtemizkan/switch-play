@@ -13,6 +13,6 @@ class Application extends Controller {
     val res = specList.map{ tuple =>
       SpecElement(tuple._1, tuple._2.toBoolean)
     }
-    Ok(Json.toJson(res.toList)) // Todo: exception handling
+    Ok(Json.toJson(res.toList)).withHeaders(ACCESS_CONTROL_ALLOW_ORIGIN -> "*") // Todo: exception handling
   }
 }

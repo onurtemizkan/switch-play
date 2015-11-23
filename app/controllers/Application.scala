@@ -10,7 +10,8 @@ class Application extends Controller {
 
   def index = Action {
     try {
-      Ok(Json.toJson(SpecMap.updateRedisData.toList)).withHeaders(ACCESS_CONTROL_ALLOW_ORIGIN -> "*")
+      Ok(Json.toJson(SpecMap.updateRedisData.toList))
+        .withHeaders(ACCESS_CONTROL_ALLOW_ORIGIN -> "*")
     } catch {
       case e:Exception =>
         Logger.error("Cannot stringify the JSON Object", e)
@@ -22,7 +23,8 @@ class Application extends Controller {
     // todo: Ugly, fix it
     SpecMap.updateRedisData
     try {
-      Ok(Json.toJson(SpecMap.getSpec(name))).withHeaders(ACCESS_CONTROL_ALLOW_ORIGIN -> "*")
+      Ok(Json.toJson(SpecMap.getSpec(name)))
+        .withHeaders(ACCESS_CONTROL_ALLOW_ORIGIN -> "*")
     } catch {
       case e:Exception =>
         Logger.error("Cannot stringify the JSON Object", e)

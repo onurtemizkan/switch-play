@@ -67,7 +67,7 @@
       }
       return false;      
     });
-    if (ret != undefined) {
+    if (typeof ret != "undefined") {
       return ret.isActive;
     }
     return "Node Not Found!";

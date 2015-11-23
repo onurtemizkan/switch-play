@@ -7,7 +7,7 @@ object Implicits {
 
   implicit val SpecElementWrites = new Writes[SpecElement] {
     def writes(element: SpecElement) =
-      Json.obj("active" -> element.active)
+      Json.parse(element.activeFor)
   }
 
   implicit val ElementListWrites = new Writes[List[SpecElement]] {

@@ -11,7 +11,7 @@
    * Global Toggle-Node List
    */
   var nodeList = [];
-  
+
   /**
    * Configuration
    */
@@ -67,14 +67,12 @@
       }
       return false;      
     });
-    
     if (ret != undefined) {
       return ret.isActive;
     }
     return "Node Not Found!";
   };
     
-  
   /**
    * Calls an XHR request to fill-up the project list
    * @param {string} projectName - Name of the project to be found
@@ -86,7 +84,6 @@
         Object.keys(obj).forEach(function(key) {
           nodeList.push({name: key, isActive: obj[key]});
         });
-        console.log(nodeList);
       });
   };
 
@@ -94,10 +91,10 @@
 
   /**
    * Assertions
-   */
+   */  
   window.setTimeout(function() {
     console.log(checkActive("david"));
     console.log(checkActive("gilmour"));
     console.log(checkActive("hola"));
-  }, 3000); 
+  }, 3000);
 })();

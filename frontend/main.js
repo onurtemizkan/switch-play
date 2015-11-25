@@ -68,7 +68,7 @@
       return false;      
     });
     if (typeof ret != "undefined") {
-      return ret.isActive;
+      return ret.activeFor;
     }
     return "Node Not Found!";
   };
@@ -82,14 +82,14 @@
       .then(function(data) {
         var obj = JSON.parse(data);
         Object.keys(obj).forEach(function(key) {
-          nodeList.push({name: key, isActive: obj[key]});
+          nodeList.push({name: key, activeFor: obj[key]});
         });
       });
   };
 
   init();
 
-  /**
+  /*
    * Assertions
    */  
   window.setTimeout(function() {
